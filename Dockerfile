@@ -1,7 +1,7 @@
-FROM caffe:cpu
+FROM bvlc/caffe:cpu
 EXPOSE 5000
 
-RUN pip install Flask
+RUN pip install Flask Pillow==6.2.1
 
 RUN wget 'https://raw.githubusercontent.com/yahoo/open_nsfw/master/nsfw_model/deploy.prototxt' -O 'model_def.prototxt'
 RUN wget 'https://github.com/yahoo/open_nsfw/raw/master/nsfw_model/resnet_50_1by2_nsfw.caffemodel' -O 'pretrained_model.caffemodel'
